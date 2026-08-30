@@ -1,48 +1,26 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Outlet } from 'react-router-dom';
 
 import Header from './Header.js'
 import Footer from './Footer.js'
-import { ColorScheme } from '../theme/styleConstants.js'
 
-const SiteWrapper = styled.div`
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  background: ${ColorScheme.accent};
-`;
-
-const ContainerDiv = styled.main`
-  flex: 1;
-  width: 100%;
-  max-width: 920px;
-  margin: 0 auto;
-  padding: 32px 24px 48px;
-  background: ${ColorScheme.white};
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-`;
-
-export const SectionTitle = styled.h3`
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: ${ColorScheme.secondary};
-  border-bottom: 2px solid ${ColorScheme.primary};
-  display: inline-block;
-  padding-bottom: 6px;
-  margin: 0 0 20px;
-`;
+export function SectionTitle({ children }) {
+  return (
+    <h3 className="inline-block m-0 uppercase text-[1.4rem] tracking-[1px] text-secondary border-b-2 border-primary pb-1.5 mb-5">
+      {children}
+    </h3>
+  );
+}
 
 function App() {
   return (
-    <SiteWrapper>
+    <div className="flex min-h-screen flex-col bg-accent">
       <Header />
-      <ContainerDiv>
+      <main className="flex-1 w-full max-w-[920px] mx-auto px-6 py-8 pb-12 bg-white shadow-sm">
         <Outlet />
-      </ContainerDiv>
+      </main>
       <Footer />
-    </SiteWrapper>
+    </div>
   );
 }
 

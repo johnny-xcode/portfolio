@@ -1,50 +1,6 @@
 import React from "react";
-import styled from "styled-components";
 
 import { SectionTitle } from "./App.js";
-import { ColorScheme } from "../theme/styleConstants";
-
-const Job = styled.div`
-  border: 1px solid ${ColorScheme.border};
-  border-radius: 6px;
-  padding: 14px 16px;
-  margin-bottom: 16px;
-  background: #fff;
-
-  .role {
-    margin: 0;
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: ${ColorScheme.secondary};
-  }
-
-  .company {
-    margin: 2px 0 0;
-    font-weight: 600;
-  }
-
-  .dates {
-    font-size: 0.8rem;
-    color: #66707a;
-    margin: 2px 0 0;
-  }
-
-  .stack {
-    font-size: 0.8rem;
-    color: #7a858f;
-    font-style: italic;
-    margin: 6px 0;
-  }
-
-  ul {
-    margin: 6px 0 0;
-    padding-left: 18px;
-  }
-
-  li {
-    margin-bottom: 2px;
-  }
-`;
 
 const jobs = [
   {
@@ -133,17 +89,17 @@ function Writing() {
     <div>
       <SectionTitle>Professional Experience</SectionTitle>
       {jobs.map((job, idx) => (
-        <Job key={idx}>
-          <p className="role">{job.role}</p>
-          <p className="company">{job.company}</p>
-          <p className="dates">{job.dates}</p>
-          <p className="stack">{job.stack}</p>
-          <ul>
+        <div key={idx} className="border border-border rounded-md p-3.5 mb-4 bg-white">
+          <p className="m-0 text-[1.05rem] font-bold text-secondary">{job.role}</p>
+          <p className="mt-0.5 font-semibold">{job.company}</p>
+          <p className="mt-0.5 text-[0.8rem] text-[#66707a]">{job.dates}</p>
+          <p className="my-1.5 text-[0.8rem] text-[#7a858f] italic">{job.stack}</p>
+          <ul className="mt-1.5 pl-[18px]">
             {job.points.map((pt, i) => (
-              <li key={i}>{pt}</li>
+              <li key={i} className="mb-0.5">{pt}</li>
             ))}
           </ul>
-        </Job>
+        </div>
       ))}
     </div>
   );

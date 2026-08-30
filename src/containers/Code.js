@@ -1,91 +1,68 @@
 import React from "react";
-import styled from "styled-components";
 
 import { SectionTitle } from "./App.js";
-import { ColorScheme } from "../theme/styleConstants";
-
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-
-  @media (max-width: 700px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const Card = styled.div`
-  background: ${ColorScheme.mainLight};
-  border: 1px solid ${ColorScheme.border};
-  border-left: 4px solid ${ColorScheme.primary};
-  border-radius: 6px;
-  padding: 14px 16px;
-
-  h5 {
-    margin: 0 0 8px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-size: 0.85rem;
-    color: ${ColorScheme.secondary};
-  }
-
-  p {
-    margin: 0;
-  }
-`;
-
-const CoreSkills = styled.ul`
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-
-  li {
-    background: ${ColorScheme.white};
-    border: 1px solid ${ColorScheme.border};
-    color: ${ColorScheme.secondary};
-    border-radius: 20px;
-    padding: 5px 14px;
-    font-size: 0.85rem;
-    margin: 0;
-  }
-`;
 
 function Code() {
   return (
     <div>
       <SectionTitle>Technical Skills</SectionTitle>
 
-      <Grid>
-        <Card><h5>Languages</h5><p>PHP, C#, VB.NET, VB6, Java</p></Card>
-        <Card><h5>Frontend</h5><p>React JS, JavaScript, TypeScript, jQuery, Bootstrap, Zustand</p></Card>
-        <Card>
-          <h5>Frameworks</h5>
-          <p>Laravel (7, 8, 11, 12), CodeIgniter 3, .NET WinForms, EF Core, LINQ, WCF, Hibernate</p>
-        </Card>
-        <Card><h5>Databases</h5><p>SQL Server, MySQL, PostgreSQL</p></Card>
-        <Card><h5>Tools</h5><p>Git, JasperReports, Crystal Reports, SSRS</p></Card>
-        <Card><h5>Knowledge</h5><p>Node.js / Express</p></Card>
-        <Card><h5>Platforms &amp; Cloud</h5><p>IIS, AWS</p></Card>
-      </Grid>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div className="bg-mainLight border border-border border-l-4 border-l-primary rounded-md p-3.5">
+          <h5 className="m-0 mb-2 uppercase tracking-[0.5px] text-[0.85rem] text-secondary">Languages</h5>
+          <p className="m-0">PHP, C#, VB.NET, VB6, Java</p>
+        </div>
+        <div className="bg-mainLight border border-border border-l-4 border-l-primary rounded-md p-3.5">
+          <h5 className="m-0 mb-2 uppercase tracking-[0.5px] text-[0.85rem] text-secondary">Frontend</h5>
+          <p className="m-0">React JS, JavaScript, TypeScript, jQuery, Bootstrap, Zustand</p>
+        </div>
+        <div className="bg-mainLight border border-border border-l-4 border-l-primary rounded-md p-3.5">
+          <h5 className="m-0 mb-2 uppercase tracking-[0.5px] text-[0.85rem] text-secondary">Frameworks</h5>
+          <p className="m-0">Laravel (7, 8, 11, 12), CodeIgniter 3, .NET WinForms, EF Core, LINQ, WCF, Hibernate</p>
+        </div>
+        <div className="bg-mainLight border border-border border-l-4 border-l-primary rounded-md p-3.5">
+          <h5 className="m-0 mb-2 uppercase tracking-[0.5px] text-[0.85rem] text-secondary">Databases</h5>
+          <p className="m-0">SQL Server, MySQL, PostgreSQL</p>
+        </div>
+        <div className="bg-mainLight border border-border border-l-4 border-l-primary rounded-md p-3.5">
+          <h5 className="m-0 mb-2 uppercase tracking-[0.5px] text-[0.85rem] text-secondary">Tools</h5>
+          <p className="m-0">Git, JasperReports, Crystal Reports, SSRS</p>
+        </div>
+        <div className="bg-mainLight border border-border border-l-4 border-l-primary rounded-md p-3.5">
+          <h5 className="m-0 mb-2 uppercase tracking-[0.5px] text-[0.85rem] text-secondary">Knowledge</h5>
+          <p className="m-0">Node.js / Express</p>
+        </div>
+        <div className="bg-mainLight border border-border border-l-4 border-l-primary rounded-md p-3.5">
+          <h5 className="m-0 mb-2 uppercase tracking-[0.5px] text-[0.85rem] text-secondary">Platforms &amp; Cloud</h5>
+          <p className="m-0">IIS, AWS</p>
+        </div>
+      </div>
 
-      <hr style={{ margin: '30px 0' }} />
+      <hr style={{ margin: "30px 0" }} />
 
       <SectionTitle>Core Skills</SectionTitle>
-      <CoreSkills>
-        <li>Full-Stack Web Development</li>
-        <li>Laravel Development</li>
-        <li>React JS Development</li>
-        <li>C# .NET Desktop (WinForms)</li>
-        <li>POS System Development</li>
-        <li>Inventory Management Systems</li>
-        <li>REST API Development</li>
-        <li>Database Design &amp; Optimization</li>
-        <li>Code Reviews</li>
-        <li>Software Design &amp; Architecture</li>
-        <li>Legacy System Modernization</li>
-      </CoreSkills>
+      <ul className="list-none p-0 flex flex-wrap gap-2">
+        {[
+          "Full-Stack Web Development",
+          "Laravel Development",
+          "React JS Development",
+          "C# .NET Desktop (WinForms)",
+          "POS System Development",
+          "Inventory Management Systems",
+          "REST API Development",
+          "Database Design & Optimization",
+          "Code Reviews",
+          "Software Design & Architecture",
+          "Legacy System Modernization",
+        ].map((skill) => (
+          <li
+            key={skill}
+            className="bg-white border border-border text-secondary rounded-full px-3.5 py-1.5 text-[0.85rem]"
+          >
+            {skill}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

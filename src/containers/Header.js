@@ -1,74 +1,38 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom'
-import styled from 'styled-components';
-import { ColorScheme } from '../theme/styleConstants.js'
-
-const HeaderDiv = styled.header`
-  background: ${ColorScheme.secondary};
-  color: #fff;
-  padding: 0 24px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-`;
-
-const Bar = styled.div`
-  width: 100%;
-  max-width: 920px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 12px 0;
-`;
-
-const Brand = styled(Link)`
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: 0.5px;
-  &:hover {
-    color: #fff;
-    text-decoration: none;
-  }
-`;
-
-const Nav = styled.nav`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-`;
-
-const NavLinkStyled = styled(NavLink)`
-  color: #d7e3ec;
-  padding: 6px 12px;
-  border-radius: 4px;
-  font-size: 0.92rem;
-  &:hover {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.1);
-    text-decoration: none;
-  }
-  &.active {
-    color: #fff;
-    background: ${ColorScheme.primary};
-  }
-`;
 
 function Header() {
+  const navClass =
+    "px-3 py-1.5 rounded text-[0.92rem] text-[#d7e3ec] hover:text-white hover:bg-white/10 no-underline";
+
   return (
-    <HeaderDiv>
-      <Bar>
-        <Brand to="/">Johnny Acierto Tabong</Brand>
-        <Nav>
-          <NavLinkStyled to="/" end>About</NavLinkStyled>
-          <NavLinkStyled to="/skills">Skills</NavLinkStyled>
-          <NavLinkStyled to="/experience">Experience</NavLinkStyled>
-          <NavLinkStyled to="/work">Recent Work</NavLinkStyled>
-          <NavLinkStyled to="/side-project">Side Project</NavLinkStyled>
-          <NavLinkStyled to="/contact">Contact</NavLinkStyled>
-        </Nav>
-      </Bar>
-    </HeaderDiv>
+    <header className="bg-secondary text-white px-6 shadow-md">
+      <div className="w-full max-w-[920px] mx-auto flex items-center justify-between flex-wrap py-3">
+        <Link to="/" className="text-white font-bold text-[1.1rem] tracking-wide hover:text-white hover:no-underline">
+          Johnny Acierto Tabong
+        </Link>
+        <nav className="flex flex-wrap gap-1">
+          <NavLink to="/" end className={({ isActive }) => `${navClass} ${isActive ? "bg-primary text-white" : ""}`}>
+            About
+          </NavLink>
+          <NavLink to="/skills" className={({ isActive }) => `${navClass} ${isActive ? "bg-primary text-white" : ""}`}>
+            Skills
+          </NavLink>
+          <NavLink to="/experience" className={({ isActive }) => `${navClass} ${isActive ? "bg-primary text-white" : ""}`}>
+            Experience
+          </NavLink>
+          <NavLink to="/work" className={({ isActive }) => `${navClass} ${isActive ? "bg-primary text-white" : ""}`}>
+            Recent Work
+          </NavLink>
+          <NavLink to="/side-project" className={({ isActive }) => `${navClass} ${isActive ? "bg-primary text-white" : ""}`}>
+            Side Project
+          </NavLink>
+          <NavLink to="/contact" className={({ isActive }) => `${navClass} ${isActive ? "bg-primary text-white" : ""}`}>
+            Contact
+          </NavLink>
+        </nav>
+      </div>
+    </header>
   );
 }
 

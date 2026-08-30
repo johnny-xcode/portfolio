@@ -1,83 +1,13 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useState } from "react";
 
 import { SectionTitle } from "./App.js";
-import { ColorScheme } from "../theme/styleConstants";
-
-const Card = styled.div`
-  border: 1px solid ${ColorScheme.border};
-  border-radius: 6px;
-  padding: 16px 18px;
-  margin-bottom: 18px;
-  background: #fff;
-
-  .title {
-    margin: 0 0 4px;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: ${ColorScheme.secondary};
-  }
-
-  .org {
-    margin: 0 0 2px;
-    font-weight: 600;
-  }
-
-  .dates {
-    font-size: 0.8rem;
-    color: #66707a;
-    margin: 0 0 4px;
-  }
-
-  .stack {
-    font-size: 0.8rem;
-    color: #7a858f;
-    font-style: italic;
-    margin: 0 0 8px;
-  }
-
-  .desc {
-    margin: 0 0 10px;
-  }
-`;
-
-const ImageRow = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 10px 0;
-`;
-
-const WorkImage = styled.img`
-  max-width: 100%;
-  border: 1px solid ${ColorScheme.border};
-  border-radius: 4px;
-  flex: 1 1 40%;
-`;
-
-const UsedList = styled.ul`
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin: 0;
-`;
-
-const UsedItem = styled.li`
-  padding: 5px 10px 4px;
-  color: #fff;
-  background: ${ColorScheme.primary};
-  border-radius: 3px;
-  text-transform: uppercase;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-`;
 
 const sharedImages = [
-  { src: require("../assets/WSM1.png"), alt: "WSM screenshot 1" },
-  { src: require("../assets/WSM2.png"), alt: "WSM screenshot 2" },
+  { src: require("../assets/wsm/WSM1.png"), alt: "WSM screenshot 1" },
+  { src: require("../assets/wsm/WSM2.png"), alt: "WSM screenshot 2" },
+  { src: require("../assets/wsm/WS3.png"), alt: "WSM screenshot 3" },
+  { src: require("../assets/wsm/WS4.png"), alt: "WSM screenshot 4" },
+  { src: require("../assets/wsm/WS8.png"), alt: "WSM screenshot 5" },
 ];
 
 const projects = [
@@ -96,7 +26,6 @@ const projects = [
     dates: "Mar 2023 - Dec 2025",
     stack: "C#, .NET WinForms, EF Core 3.1, Laravel 7/8/10, React 17, React Query, MySQL, SQL Server, IIS",
     desc: "Developed and maintained an HR attendance management system using QR codes, alongside the Helpdesk Ticket Tracking System, POS, Back Office, and Head Office systems. Built inventory tracking and stock movement modules and enhanced reporting capabilities.",
-    images: sharedImages,
     tags: ["C# .NET", "React 17", "Laravel", "EF Core", "SQL Server"],
   },
   {
@@ -105,7 +34,6 @@ const projects = [
     dates: "Jul 2020 - Feb 2023",
     stack: "C#, .NET WinForms, EF Core 3.1, Laravel 7/8, MySQL, SQL Server, IIS",
     desc: "Developed and maintained the FamilyMart POS system and built C# console applications to synchronize POS and Head Office data, improving performance, stability, and scalability.",
-    images: sharedImages,
     tags: ["C# .NET", "WinForms", "EF Core", "MySQL"],
   },
   {
@@ -114,35 +42,60 @@ const projects = [
     dates: "Dec 2015 - Jun 2020",
     stack: "C#, ASP.NET Web API, WCF, CodeIgniter 3, MySQL, MS SQL Server, SSRS",
     desc: "Led the migration of legacy VB6/VB.NET desktop applications to C# WinForms, architected real-time data synchronization APIs between distributed POS stores and head office, and built SSRS report server capabilities.",
-    images: sharedImages,
     tags: ["C# WinForms", "ASP.NET Web API", "CodeIgniter", "SSRS"],
   },
 ];
 
 function RecentWork() {
+  const [expanded, setExpanded] = useState({});
+
+  const toggle = (idx) => {
+    setExpanded((prev) => ({ ...prev, [idx]: !prev[idx] }));
+  };
+
   return (
     <div>
       <SectionTitle>Recent Work</SectionTitle>
       {projects.map((project, idx) => (
-        <Card key={idx}>
-          <p className="title">{project.title}</p>
-          <p className="org">{project.org}</p>
-          <p className="dates">{project.dates}</p>
-          <p className="stack">{project.stack}</p>
-          <p className="desc">{project.desc}</p>
-          {project.images.length > 0 && (
-            <ImageRow>
-              {project.images.map((img, i) => (
-                <WorkImage key={i} src={img.src} alt={img.alt} />
-              ))}
-            </ImageRow>
+        <div key={idx} className="border border-border rounded-md p-4 mb-4 bg-white">
+          <p className="m-0 mb-1 text-[1.1rem] font-bold text-secondary">{project.title}</p>
+          <p className="m-0 mb-0.5 font-semibold">{project.org}</p>
+          <p className="m-0 mb-1 text-[0.8rem] text-[#66707a]">{project.dates}</p>
+          <p className="m-0 mb-2 text-[0.8rem] text-[#7a858f] italic">{project.stack}</p>
+          <p className="m-0 mb-2.5">{project.desc}</p>
+          {project.images && project.images.length > 0 && (
+            <>
+              <div className="flex flex-wrap gap-2.5 my-2.5">
+                {project.images
+                  .slice(0, expanded[idx] ? project.images.length : 1)
+                  .map((img, i) => (
+                    <img
+                      key={i}
+                      src={img.src}
+                      alt={img.alt}
+                      className="max-w-full border border-border rounded flex-[1_1_40%]"
+                    />
+                  ))}
+              </div>
+              <button
+                onClick={() => toggle(idx)}
+                className="mt-4 mb-2 px-3.5 py-1.5 text-[0.85rem] font-semibold text-white bg-[linear-gradient(135deg,#0b7285,#2f4858)] rounded cursor-pointer transition-opacity hover:opacity-90"
+              >
+                {expanded[idx] ? "Show Less" : `Show All (${project.images.length} photos)`}
+              </button>
+            </>
           )}
-          <UsedList>
+          <ul className="list-none p-0 flex flex-wrap gap-1.5 mt-4">
             {project.tags.map((tag, i) => (
-              <UsedItem key={i}>{tag}</UsedItem>
+              <li
+                key={i}
+                className="px-2.5 py-1 text-white bg-primary rounded uppercase text-[10px] font-medium tracking-[0.5px]"
+              >
+                {tag}
+              </li>
             ))}
-          </UsedList>
-        </Card>
+          </ul>
+        </div>
       ))}
     </div>
   );
