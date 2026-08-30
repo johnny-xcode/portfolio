@@ -75,6 +75,11 @@ const UsedItem = styled.li`
   letter-spacing: 0.5px;
 `;
 
+const sharedImages = [
+  { src: require("../assets/WSM1.png"), alt: "WSM screenshot 1" },
+  { src: require("../assets/WSM2.png"), alt: "WSM screenshot 2" },
+];
+
 const projects = [
   {
     title: "Retail Pricing / Wet Stock Management System (RPS/WSM)",
@@ -82,10 +87,7 @@ const projects = [
     dates: "Jan 2026 - Sep 2026",
     stack: "Laravel 12, React JS 18, TypeScript, Zustand, AWS Services",
     desc: "Designed and developed an enterprise retail pricing and wet stock management system, contributing to system architecture, code reviews, database optimization, and production deployments.",
-    images: [
-      { src: require("../assets/WSM1.png"), alt: "WSM screenshot 1" },
-      { src: require("../assets/WSM2.png"), alt: "WSM screenshot 2" },
-    ],
+    images: sharedImages,
     tags: ["Laravel 12", "React 18", "TypeScript", "Zustand", "AWS"],
   },
   {
@@ -94,7 +96,7 @@ const projects = [
     dates: "Mar 2023 - Dec 2025",
     stack: "C#, .NET WinForms, EF Core 3.1, Laravel 7/8/10, React 17, React Query, MySQL, SQL Server, IIS",
     desc: "Developed and maintained an HR attendance management system using QR codes, alongside the Helpdesk Ticket Tracking System, POS, Back Office, and Head Office systems. Built inventory tracking and stock movement modules and enhanced reporting capabilities.",
-    images: [],
+    images: sharedImages,
     tags: ["C# .NET", "React 17", "Laravel", "EF Core", "SQL Server"],
   },
   {
@@ -103,7 +105,7 @@ const projects = [
     dates: "Jul 2020 - Feb 2023",
     stack: "C#, .NET WinForms, EF Core 3.1, Laravel 7/8, MySQL, SQL Server, IIS",
     desc: "Developed and maintained the FamilyMart POS system and built C# console applications to synchronize POS and Head Office data, improving performance, stability, and scalability.",
-    images: [],
+    images: sharedImages,
     tags: ["C# .NET", "WinForms", "EF Core", "MySQL"],
   },
   {
@@ -112,7 +114,7 @@ const projects = [
     dates: "Dec 2015 - Jun 2020",
     stack: "C#, ASP.NET Web API, WCF, CodeIgniter 3, MySQL, MS SQL Server, SSRS",
     desc: "Led the migration of legacy VB6/VB.NET desktop applications to C# WinForms, architected real-time data synchronization APIs between distributed POS stores and head office, and built SSRS report server capabilities.",
-    images: [],
+    images: sharedImages,
     tags: ["C# WinForms", "ASP.NET Web API", "CodeIgniter", "SSRS"],
   },
 ];
