@@ -10,6 +10,11 @@ const sharedImages = [
   { src: require("../assets/wsm/WS8.png"), alt: "WSM screenshot 5" },
 ];
 
+const sharedImagesHR = [
+  { src: require("../assets/hr/hr1.png"), alt: "hr screenshot 1" },
+   { src: require("../assets/hr/hr2.png"), alt: "hr screenshot 1" },
+];
+
 const projects = [
   {
     title: "Retail Pricing / Wet Stock Management System (RPS/WSM)",
@@ -20,14 +25,17 @@ const projects = [
     images: sharedImages,
     tags: ["Laravel 12", "React 18", "TypeScript", "Zustand", "AWS"],
   },
+
   {
     title: "HR Attendance Management System (QR Code)",
     org: "Phoenix Petroleum Philippines Inc.",
-    dates: "Mar 2023 - Dec 2025",
-    stack: "C#, .NET WinForms, EF Core 3.1, Laravel 7/8/10, React 17, React Query, MySQL, SQL Server, IIS",
-    desc: "Developed and maintained an HR attendance management system using QR codes, alongside the Helpdesk Ticket Tracking System, POS, Back Office, and Head Office systems. Built inventory tracking and stock movement modules and enhanced reporting capabilities.",
-    tags: ["C# .NET", "React 17", "Laravel", "EF Core", "SQL Server"],
+    dates: "Mar 2024 - Dec 2025",
+    stack: "Laravel 10, React 17, React Query, MySQL",
+    desc: "Developed and maintained an HR attendance management system using QR codes.",
+    images: sharedImagesHR,
+     tags: ["Laravel 10", "React 17", "Javascript", "React Query", "AWS"],
   },
+
   {
     title: "FamilyMart POS System",
     org: "Action. Able Inc. — Microsoft C# Developer",
@@ -36,6 +44,7 @@ const projects = [
     desc: "Developed and maintained the FamilyMart POS system and built C# console applications to synchronize POS and Head Office data, improving performance, stability, and scalability.",
     tags: ["C# .NET", "WinForms", "EF Core", "MySQL"],
   },
+  
   {
     title: "POS & Back-Office Modernization",
     org: "Cindy's Bakery and Restaurant — Programmer Lead",
