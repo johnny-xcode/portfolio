@@ -15,6 +15,21 @@ const sharedImagesHR = [
    { src: require("../assets/hr/hr2.png"), alt: "hr screenshot 1" },
 ];
 
+const sharedImagesPOS = [
+  { src: require("../assets/pos/pos1.png"), alt: "POS screenshot 1" },
+  { src: require("../assets/pos/pos2.png"), alt: "POS screenshot 2" },
+  { src: require("../assets/pos/pos3.png"), alt: "POS screenshot 3" },
+  { src: require("../assets/pos/pos4.png"), alt: "POS screenshot 4" },
+  { src: require("../assets/pos/pos5.png"), alt: "POS screenshot 5" },
+];
+
+const sharedImagesBOS = [
+  { src: require("../assets/bos/b1.png"), alt: "Back Office screenshot 1" },
+  { src: require("../assets/bos/b2.png"), alt: "Back Office screenshot 2" },
+  { src: require("../assets/bos/b3.png"), alt: "Back Office screenshot 3" },
+  { src: require("../assets/bos/b4.png"), alt: "Back Office screenshot 4" },
+];
+
 const projects = [
   {
     title: "Retail Pricing / Wet Stock Management System (RPS/WSM)",
@@ -42,8 +57,20 @@ const projects = [
     dates: "Jul 2020 - Feb 2023",
     stack: "C#, .NET WinForms, EF Core 3.1, Laravel 7/8, MySQL, SQL Server, IIS",
     desc: "Developed and maintained the FamilyMart POS system and built C# console applications to synchronize POS and Head Office data, improving performance, stability, and scalability.",
+    images: sharedImagesPOS,
     tags: ["C# .NET", "WinForms", "EF Core", "MySQL"],
   },
+
+   {
+    title: "Back-Office Modernization",
+    org: "Philippine FamilyMart CVS, Inc — IT Consultant - Application Developer",
+    dates: "Feb 2023 - Dec 2025",
+    stack: "C#, .NET WinForms, EF Core 3.1, Laravel 7/8, MySQL, SQL Server, IIS",
+    desc: "Led the migration of legacy VB6/VB.NET desktop applications to C# WinForms, architected real-time data synchronization APIs between distributed POS stores and head office, and built SSRS report server capabilities.",
+    images: sharedImagesBOS,
+    tags: ["C# .NET", "WinForms", "EF Core", "MySQL"],
+  },
+
   
   {
     title: "POS & Back-Office Modernization",
@@ -51,6 +78,7 @@ const projects = [
     dates: "Dec 2015 - Jun 2020",
     stack: "C#, ASP.NET Web API, WCF, CodeIgniter 3, MySQL, MS SQL Server, SSRS",
     desc: "Led the migration of legacy VB6/VB.NET desktop applications to C# WinForms, architected real-time data synchronization APIs between distributed POS stores and head office, and built SSRS report server capabilities.",
+    // images: sharedImagesBOS,
     tags: ["C# WinForms", "ASP.NET Web API", "CodeIgniter", "SSRS"],
   },
 ];

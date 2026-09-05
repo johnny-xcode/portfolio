@@ -15,7 +15,7 @@ const jobs = [
   },
   {
     role: "IT Consultant - Application Developer",
-    company: "Phoenix Petroleum Philippines Inc.",
+    company: "Philippine FamilyMart CVS, Inc.",
     dates: "Mar 2023 - Dec 2025",
     stack: "C#, .NET WinForms, EF Core 3.1, Laravel 7/8/10, React 17, React Query, MySQL, SQL Server, IIS, AWS Services",
     points: [
