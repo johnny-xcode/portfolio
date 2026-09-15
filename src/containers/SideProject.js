@@ -41,7 +41,7 @@ function SideProject() {
           and Node.js. Explore it live below.
         </p>
         <ul className="list-none p-0 flex flex-wrap gap-1.5 mb-3">
-          {["PostgreSQL", "Express", "React", "Node.js"].map((t) => (
+          {["PostgreSQL", "Express", "React", "Node.js", "TailwindCSS"].map((t) => (
             <li
               key={t}
               className="px-2.5 py-1 text-white bg-primary rounded uppercase text-[10px] font-medium tracking-[0.5px]"
@@ -67,7 +67,7 @@ function SideProject() {
           notes online. Explore it live below.
         </p>
         <ul className="list-none p-0 flex flex-wrap gap-1.5 mb-3">
-          {["PostgreSQL", "Express", "React", "Node.js"].map((t) => (
+          {["MongoDB", "Express", "React", "Node.js", "TailwindCSS"].map((t) => (
             <li
               key={t}
               className="px-2.5 py-1 text-white bg-primary rounded uppercase text-[10px] font-medium tracking-[0.5px]"
