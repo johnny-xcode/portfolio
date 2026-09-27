@@ -7,7 +7,7 @@ function SideProject() {
     <div>
       <SectionTitle>Side Project</SectionTitle>
 
-      <div className="border border-border rounded-md p-4 bg-white">
+      {/* <div className="border border-border rounded-md p-4 bg-white">
         <p className="m-0 mb-1 text-[1.1rem] font-bold text-secondary">Sample Features App</p>
         <p className="m-0 mb-2.5">
           A Core PHP web app (Bootstrap front-end) featuring Google Sign-In and Facebook Login
@@ -32,7 +32,14 @@ function SideProject() {
         >
           Visit the app
         </a>
-      </div>
+      </div> */}
+
+
+
+  
+
+
+
 
       <div className="border border-border rounded-md p-4 bg-white mt-3">
         <p className="m-0 mb-1 text-[1.1rem] font-bold text-secondary">PERN Stack App</p>
