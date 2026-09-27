@@ -35,7 +35,31 @@ function SideProject() {
       </div> */}
 
 
-
+      <div className="border border-border rounded-md p-4 bg-white mt-3">
+        <p className="m-0 mb-1 text-[1.1rem] font-bold text-secondary">E-Commerce Store</p>
+        <p className="m-0 mb-2.5">
+          An e-commerce store web application where users can browse and shop for
+          products online. Explore it live below.
+        </p>
+        <ul className="list-none p-0 flex flex-wrap gap-1.5 mb-3">
+          {["MongoDB", "Express", "React", "Node.js", "TailwindCSS", "Redis"].map((t) => (
+            <li
+              key={t}
+              className="px-2.5 py-1 text-white bg-primary rounded uppercase text-[10px] font-medium tracking-[0.5px]"
+            >
+              {t}
+            </li>
+          ))}
+        </ul>
+        <a
+          href="https://ecommerstore-vjv1.onrender.com/"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-block px-4 py-2 bg-primary text-white rounded font-semibold no-underline hover:bg-third hover:text-white hover:no-underline"
+        >
+          Visit the app
+        </a>
+      </div>
 
 
 
@@ -93,31 +117,8 @@ function SideProject() {
         </a>
       </div>
 
-      <div className="border border-border rounded-md p-4 bg-white mt-3">
-        <p className="m-0 mb-1 text-[1.1rem] font-bold text-secondary">E-Commerce Store</p>
-        <p className="m-0 mb-2.5">
-          An e-commerce store web application where users can browse and shop for
-          products online. Explore it live below.
-        </p>
-        <ul className="list-none p-0 flex flex-wrap gap-1.5 mb-3">
-          {["MongoDB", "Express", "React", "Node.js", "TailwindCSS", "Redis"].map((t) => (
-            <li
-              key={t}
-              className="px-2.5 py-1 text-white bg-primary rounded uppercase text-[10px] font-medium tracking-[0.5px]"
-            >
-              {t}
-            </li>
-          ))}
-        </ul>
-        <a
-          href="https://ecommerstore-vjv1.onrender.com/"
-          target="_blank"
-          rel="noreferrer"
-          className="inline-block px-4 py-2 bg-primary text-white rounded font-semibold no-underline hover:bg-third hover:text-white hover:no-underline"
-        >
-          Visit the app
-        </a>
-      </div>
+
+
     </div>
   );
 }

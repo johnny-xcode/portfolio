@@ -9,7 +9,8 @@ function Home() {
       <p>
         Hi! I'm Johnny, a full-stack developer experienced in designing, developing,
         modernizing, and maintaining enterprise applications using Laravel, React JS,
-        C# .NET WinForms, VB.NET, SQL Server, and MySQL.
+        C# .NET WinForms, VB.NET, SQL Server, MySQL, Redis, TailwindCSS, and
+        Node.js / Express.
       </p>
       <p>
         I'm experienced in delivering POS, back-office, inventory management, HR,
